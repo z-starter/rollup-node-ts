@@ -1,12 +1,17 @@
-import { cpSync, readFileSync, writeFileSync } from "fs"
+import { cpSync, existsSync, mkdirSync, readFileSync, writeFileSync } from "fs"
 
 export const assetsConfig = () => {
   return {
     name: "assets-config",
     closeBundle: async () => {
-      cpSync(`${process.cwd()}/statics`, `${process.cwd()}/dist/statics`, {
-        recursive: true,
-      })
+      if (existsSync(`${process.cwd()}/statics`))
+        cpSync(`${process.cwd()}/statics`, `${__dirname}/dist/statics`, {
+          recursive: true,
+        })
+      else
+        mkdirSync(`${process.cwd()}/dist/statics`, {
+          recursive: true,
+        })
 
       const { devDependencies, packageManager, ...packageJson } = JSON.parse(
         readFileSync(`${process.cwd()}/package.json`, "utf8"),
