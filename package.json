@@ -17,7 +17,7 @@
     "@rollup/plugin-terser": "^0.4.4",
     "@rollup/plugin-typescript": "^12.1.2",
     "@types/ws": "^8.5.13",
-    "@z-code/vite-plugin-swc": "^0.5.0",
+    "@z-code/vite-plugin-swc": "^0.5.2",
     "concurrently": "^9.1.2",
     "nodemon": "^3.1.9",
     "rollup": "^4.31.0",
