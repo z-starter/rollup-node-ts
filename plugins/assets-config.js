@@ -1,4 +1,7 @@
 import { cpSync, existsSync, mkdirSync, readFileSync, writeFileSync } from "fs"
+import path from "path"
+
+const __dirname = path.resolve(path.dirname(""))
 
 export const assetsConfig = () => {
   return {
